@@ -47,17 +47,17 @@ poluir a barra de tarefas nem atrapalhar o fluxo.
 O app tem dois lados que se comunicam pela ponte do Tauri:
 
 ```
-┌─────────────────────────────────────────────┐   ┌──────────────────────────┐
-│  Frontend (WebView) — React + TS            │   │  Backend — Rust (Tauri)  │
-│                                              │   │                          │
-│  routes/  →  components/  →  services/tasks  │◄─►│  lib.rs                  │
-│  (telas)     (UI)           (Create/List/    │   │  • tray icon + menu      │
+┌───────────────────────────────────────────────┐   ┌──────────────────────────┐
+│  Frontend (WebView) — React + TS              │   │  Backend — Rust (Tauri)  │
+│                                               │   │                          │
+│  routes/  →  components/  →  services/tasks   │◄─►│  lib.rs                  │
+│  (telas)     (UI)           (Create/List/     │   │  • tray icon + menu      │
 │                              Get/Delete/      │   │  • janela (show/hide/    │
 │                              toggle/reorder)  │   │    posição, blur→hide)   │
 │                                   │           │   │  • plugin-store (Rust)   │
-└───────────────────────────────────┼──────────┘   └────────────┬─────────────┘
-                                     │                            │
-                                     └──────────►  tasks.json  ◄──┘
+└───────────────────────────────────┼───────────┘   └────────────┬─────────────┘
+                                    │                            │
+                                    └──────────►  tasks.json  ◄──┘
                                               (arquivo no disco)
 ```
 
